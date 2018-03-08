@@ -11,16 +11,16 @@ from trytond.pool import Pool, PoolMeta
 from trytond.transaction import Transaction
 
 __all__ = ['SplitMoveStart', 'SplitMove']
-__metaclass__ = PoolMeta
 
 
 class SplitMoveStart:
+    __metaclass__ = PoolMeta
     __name__ = 'stock.move.split.start'
-
     lot_file = fields.Binary('File')
 
 
 class SplitMove:
+    __metaclass__ = PoolMeta
     __name__ = 'stock.move.split'
 
     def transition_split(self):
