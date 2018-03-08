@@ -6,8 +6,6 @@ try:
     import cStringIO as StringIO
 except ImportError:
     import StringIO
-
-
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 from trytond.transaction import Transaction
@@ -34,7 +32,7 @@ class SplitMove:
         if self.start.lot_file:
             to_create = []
             book = load_workbook(StringIO.StringIO(self.start.lot_file),
-                use_iterators=True)
+                read_only=True)
             sheet = book.worksheets[0]
             for row in sheet.iter_rows():
                 for cell in row:
